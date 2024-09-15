@@ -181,35 +181,35 @@ class _MyIOSAppState extends State<MyIOSApp> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text("ActivationState: ",
-                style: theme.textTheme.headline6?.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: theme.colorScheme.primary)),
             Text("${_activationState}"),
             Text("isReachable: ",
-                style: theme.textTheme.headline6?.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: theme.colorScheme.primary)),
             Text("${_isReachable}",
-                style: theme.textTheme.subtitle2?.copyWith(
+                style: theme.textTheme.titleSmall?.copyWith(
                     color:
                         _isReachable ? Colors.greenAccent : Colors.redAccent)),
             Text("isPaired: ",
-                style: theme.textTheme.headline6?.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: theme.colorScheme.primary)),
             Text("${_pairedDeviceInfo.isPaired}"),
             Text("isWatchAppInstalled: ",
-                style: theme.textTheme.headline6?.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: theme.colorScheme.primary)),
             Text("${_pairedDeviceInfo.isWatchAppInstalled}"),
             Text("isComplicationEnabled: ",
-                style: theme.textTheme.headline6?.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: theme.colorScheme.primary)),
             Text("${_pairedDeviceInfo.isComplicationEnabled}"),
             Text("watchDirectoryURL: ",
-                style: theme.textTheme.headline6?.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: theme.colorScheme.primary)),
             Text("${_pairedDeviceInfo.watchDirectoryURL?.path}")
@@ -224,12 +224,12 @@ class _MyIOSAppState extends State<MyIOSApp> {
           spacing: 10,
           children: [
             Text("Message received: ",
-                style: theme.textTheme.headline6?.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: theme.colorScheme.primary)),
             Text(_currentMessage.toString()),
             Text("Reply received: ",
-                style: theme.textTheme.headline6?.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: theme.colorScheme.primary)),
             Text(_currentRepliedMessage.toString()),
@@ -265,12 +265,12 @@ class _MyIOSAppState extends State<MyIOSApp> {
           spacing: 10,
           children: [
             Text("Current application context:  ",
-                style: theme.textTheme.headline6?.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: theme.colorScheme.primary)),
             Text(_applicationContext.currentData.toString()),
             Text("Received application context:  ",
-                style: theme.textTheme.headline6?.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: theme.colorScheme.primary)),
             Text(_applicationContext.receivedData.toString()),
@@ -291,12 +291,12 @@ class _MyIOSAppState extends State<MyIOSApp> {
           spacing: 10,
           children: [
             Text("Received user info: ",
-                style: theme.textTheme.headline6?.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: theme.colorScheme.primary)),
             Text(_receivedUserInfo.toString()),
             Text("Pending user info transfers: ",
-                style: theme.textTheme.headline6?.copyWith(
+                style: theme.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w600,
                     color: theme.colorScheme.primary)),
             ..._userInfoPendingTransfers.map((transfer) => Row(
@@ -304,7 +304,7 @@ class _MyIOSAppState extends State<MyIOSApp> {
                     Expanded(
                       child: Text(
                           "${transfer.id}: " + transfer.userInfo.toString(),
-                          style: theme.textTheme.headline6
+                          style: theme.textTheme.titleLarge
                               ?.copyWith(fontWeight: FontWeight.w600)),
                     ),
                     CupertinoButton(
@@ -346,18 +346,18 @@ class _MyIOSAppState extends State<MyIOSApp> {
             spacing: 10,
             children: [
               Text("Received file: ",
-                  style: theme.textTheme.headline6?.copyWith(
+                  style: theme.textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w600,
                       color: theme.colorScheme.primary)),
               if (_receivedFileData != null)
                 Image.file(_receivedFileData!.left),
               Text("Metadata: ",
-                  style: theme.textTheme.headline6?.copyWith(
+                  style: theme.textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w600,
                       color: theme.colorScheme.primary)),
               Text("${_receivedFileData?.right ?? ""}"),
               Text("Pending file transfers: ",
-                  style: theme.textTheme.headline6?.copyWith(
+                  style: theme.textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.w600,
                       color: theme.colorScheme.primary)),
               ..._pendingFileTransfers.map((transfer) => Row(
@@ -365,7 +365,7 @@ class _MyIOSAppState extends State<MyIOSApp> {
                       Expanded(
                         child: Text(
                             "${transfer.id}: " + transfer.file.toString(),
-                            style: theme.textTheme.headline6
+                            style: theme.textTheme.titleLarge
                                 ?.copyWith(fontWeight: FontWeight.w600)),
                       ),
                       CupertinoButton(
@@ -428,7 +428,7 @@ class _MyIOSAppState extends State<MyIOSApp> {
             child: Text(
               title,
               textAlign: TextAlign.center,
-              style: theme.textTheme.subtitle2?.copyWith(color: Colors.white),
+              style: theme.textTheme.titleSmall?.copyWith(color: Colors.white),
             )),
         onPressed: onPressed);
   }
